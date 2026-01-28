@@ -1,0 +1,191 @@
+/* =========================
+   UDAY – Design System
+========================= */
+
+:root {
+  /* Base */
+  --bg: #FCFCFA;
+  --text: #0F1418;
+  --muted: #6B7280;
+
+  /* Brand palette (from logo) */
+  --red: #E85B6A;
+  --coral: #FF8A66;
+  --sun: #FFD3A3;
+  --teal: #4F7F8F;
+  --deep-teal: #2F5D6C;
+  --sage: #6E9277;
+
+  /* UI usage */
+  --accent: var(--red);
+  --header-bg: var(--deep-teal);
+  --header-text: #ffffff;
+  --link: var(--red);
+  --link-hover: var(--coral);
+  --border-subtle: rgba(0,0,0,0.08);
+
+  --max-width: 1200px;
+
+  --font-serif: "Libre Baskerville", serif;
+  --font-sans: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+
+  --ease: cubic-bezier(0.2, 0.6, 0.2, 1);
+  --fast: 120ms;
+  --normal: 180ms;
+}
+
+/* =========================
+   Base Reset
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* =========================
+   Header (Minimal Editorial)
+========================= */
+
+.site-header {
+  background: var(--header-bg);
+  color: var(--header-text);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+.logo img {
+  height: 36px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+  font-size: 0.95rem;
+}
+
+.nav-links a {
+  color: var(--header-text);
+  opacity: 0.85;
+  transition: opacity var(--fast) var(--ease);
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+/* =========================
+   Homepage sections
+========================= */
+
+.hero {
+  padding: 80px 0 60px;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  font-weight: 700;
+  max-width: 700px;
+  line-height: 1.2;
+}
+
+.hero p {
+  margin-top: 16px;
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.section {
+  padding: 60px 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.section h2 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  margin-bottom: 24px;
+}
+
+/* =========================
+   Footer (later)
+========================= */
+.logo img {
+  transition: transform 300ms var(--ease), filter 300ms var(--ease);
+}
+
+.logo:hover img {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+.issue-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.issue-cover .placeholder {
+  width: 100%;
+  height: 280px;
+  background: var(--sun);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.issue-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.issue-info p {
+  color: var(--muted);
+  max-width: 500px;
+  margin-bottom: 12px;
+}
